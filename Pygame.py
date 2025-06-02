@@ -1,3 +1,4 @@
+
 import pygame
 import random
 
@@ -29,11 +30,6 @@ takistus_kiirus = 5
 # Punktid ja font
 punktid = 0
 font = pygame.font.SysFont("Arial", 24)
-
-# Helid
-kaotus_heli = pygame.mixer.Sound("lose.wav")
-pygame.mixer.music.load("background_music.wav")
-pygame.mixer.music.play(-1)
 
 kell = pygame.time.Clock()
 jookseb = True
@@ -67,9 +63,6 @@ while jookseb:
 
         # Kontroll kokkupõrke kohta
         if mängija_ristkülik.colliderect(takistus_ristkülik):
-            pygame.mixer.music.stop()  # Vaigistab taustamuusika
-            kaotus_heli.play()         # Mängib kaotusheli
-            pygame.time.delay(1000)    # Ootab, et heli kostaks
             mäng_läbi = True
 
         # Joonistame mängija ja takistuse
